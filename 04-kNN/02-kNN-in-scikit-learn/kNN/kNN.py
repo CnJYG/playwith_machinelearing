@@ -24,7 +24,7 @@ class KNNClassifier:
         return self
 
     def predict(self, X_predict):
-        """给定待预测数据集X_predict，返回表示X_predict的结果向量"""
+        """给定待预测数据集X_predict，返回表示X_predict的结果向量,且保证之前已经运行过fit()"""
         assert self._X_train is not None and self._y_train is not None, \
                 "must fit before predict!"
         assert X_predict.shape[1] == self._X_train.shape[1], \
